@@ -55,10 +55,8 @@ export default function DonutChart({axis}) {
     ]
   };
 
-  console.log("Number",Number(axis.x))
   return (
     <div>
-      {console.log("axis",axis)}
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

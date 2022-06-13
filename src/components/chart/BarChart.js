@@ -22,6 +22,9 @@ export default function BarChart() {
     legend: {
       enabled: false
     },
+    credits: {
+      enabled: false
+  },
     plotOptions: {
       bar: {
         stacking: "normal",

@@ -15,6 +15,25 @@ const options = {
   xAxis: {
     categories: ["2022", "2023", "2024", "2025", "2026"]
   },
+  plotOptions: {
+    series: {
+      marker: {
+        symbol: 'circle',
+        radius: 2.5,
+        fillColor: 'black',
+        // lineColor: 'white',
+        // lineWidth: 8
+      },
+      states: {
+        hover: {
+            enabled: true,
+            halo: {
+                size: 0
+            }
+        }
+    }
+    }
+  },
   tooltip: {
     style: {
       pointerEvents: "auto",
@@ -24,8 +43,12 @@ const options = {
   legend: {
     enabled: false
   },
+  credits: {
+    enabled: false
+},
   series: [
     {
+      index: 1,
       type: "arearange",
       enableMouseTracking: false,
       data: [
@@ -34,13 +57,18 @@ const options = {
         ["2024", 0, 3],
         ["2025", 0, 6.33],
         ["2026", 0, 3.33]
-      ]
+      ],
+      marker: {
+        enabled: false,
+     }
     },
     {
+      index: 3,
       type: "line",
-      data: [3, 2.67, 3, 6.33, 3.33]
+      data: [3, 2.67, 3, 6.33, 3.33],
     },
     {
+      index: 2,
       type: "arearange",
       enableMouseTracking: false,
       data: [
@@ -49,7 +77,10 @@ const options = {
         ["2024", 3, 8],
         ["2025", 6.33, 8],
         ["2026", 3.33, 8]
-      ]
+      ],
+      marker: {
+        enabled: false,
+     }
     }
   ]
 };
