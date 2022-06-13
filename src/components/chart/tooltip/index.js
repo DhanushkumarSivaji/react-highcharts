@@ -28,8 +28,8 @@ export const Tooltip = ({ chart, children }) => {
         tooltip: {
           formatter,
           positioner: function (labelWidth, labelHeight, point) {
-            var tooltipX = point.plotX + 4;
-            var tooltipY = point.plotY - 10;
+            var tooltipX = point.plotX + 14;
+            var tooltipY = point.plotY ;
             return {
               x: tooltipX,
               y: tooltipY

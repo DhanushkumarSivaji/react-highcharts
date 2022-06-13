@@ -5,12 +5,12 @@ import HighchartsReact from "highcharts-react-official";
 
 highchartsMore(Highcharts);
 
-export default function DonutChart() {
+export default function DonutChart({axis}) {
   const options = {
     chart: {
       type: "pie",
-      width: 100,
-      height: 100,
+      width: 80,
+      height: 80,
       backgroundColor: "rgba(0,0,0,0)"
     },
     title: {
@@ -44,19 +44,21 @@ export default function DonutChart() {
         data: [
           {
             name: "Nitrogen",
-            y: 78
+            y: (Number(axis.x) - 2000) + Math.floor(Math.random() * 50)
           },
           {
             name: "Oxygen",
-            y: 20.9
+            y: axis.y + Math.floor(Math.random() * 50)
           }
         ]
       }
     ]
   };
 
+  console.log("Number",Number(axis.x))
   return (
     <div>
+      {console.log("axis",axis)}
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );
