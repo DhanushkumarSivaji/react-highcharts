@@ -7,11 +7,14 @@ HC_rounded(Highcharts);
 export default function BarChart() {
   const options = {
     title: {
-      text: "Highcharts rounded corners plugin"
+      text: ""
     },
 
     xAxis: {
-      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      labels: {
+        enabled: false
+    }
     },
     yAxis: {
       opposite: true,
@@ -34,8 +37,12 @@ export default function BarChart() {
           enabled: true,
           color: "black",
           align: "right",
-          format: "{y} d",
+          // format: "{x} {y} d",
           inside: false,
+          useHTML: true,
+          formatter: function () {
+            return this.x+'<br/>'+this.y;
+        },        
           style: {
             fontWeight: "bold"
           },
@@ -50,7 +57,7 @@ export default function BarChart() {
 
     series: [
       {
-        data: [129.2, 2.9, 176.0, 144.0, 106.4, 71.5],
+        data: [129.2, 1.9, 176.0, 144.0, 106.4, 71.5],
         type: "bar",
         colorByPoint: true
       }

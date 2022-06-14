@@ -13,8 +13,13 @@ const options = {
     text: "Combination chart"
   },
   xAxis: {
-    categories: ["2022", "2023", "2024", "2025", "2026"]
+    categories: ["2022", "2023", "2024", "2025", "2026"],
   },
+  // yAxis: {
+  //   title: {
+  //     text: null
+  //   }
+  // },
   plotOptions: {
     series: {
       marker: {
